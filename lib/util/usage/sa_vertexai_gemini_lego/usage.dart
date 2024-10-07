@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../../../../main.dart';
+import '../../../app/backend/vertex_ai_gemini/in_text_1image_out_text.dart';
+import '../../../app/backend/vertex_ai_gemini/in_text_1video_out_text.dart';
+import '../../../app/backend/vertex_ai_gemini/in_text_many_image_out_text.dart';
+import '../../../app/backend/vertex_ai_gemini/in_text_out_text.dart';
 
 String _noteName = "Note";
 
 T _button00 = T("00", onTap: (BuildContext context) async {
   ////////////////////////////////////////
+
+  String? response = await VerTexAIGeminiInTextOutText(
+      "Write a story about a magic backpack.");
+  print(response);
 
   ////////////////////////////////////////
 });
@@ -13,11 +21,31 @@ T _button00 = T("00", onTap: (BuildContext context) async {
 T _button01 = T("01", onTap: (BuildContext context) async {
   ////////////////////////////////////////
 
+  String? response = await VerTexAIGeminiInText1ImageOutText(
+      "What's in the picture?",
+      (await rootBundle.load('assets/lego/sa_vertexai_gemini_lego/winter.webp'))
+          .buffer
+          .asUint8List(),
+      "image/jpeg");
+  print(response);
+
   ////////////////////////////////////////
 });
 
 T _button02 = T("02", onTap: (BuildContext context) async {
   ////////////////////////////////////////
+
+  // 멀티 이미지에 대한 텍스트 생성 함수 호출
+  String? response = await VerTexAIGeminiInTextIManyImageOutText(
+      "What's different between these pictures?", await Future.wait([
+    rootBundle.load('assets/lego/firebase_vertexai_lego/winter.webp')
+        .then((byteData) => byteData.buffer.asUint8List()),
+    rootBundle.load('assets/lego/firebase_vertexai_lego/want0.webp')
+        .then((byteData) => byteData.buffer.asUint8List()),
+  ]), ['image/jpeg', 'image/jpeg']);
+
+  // 결과 출력
+  print(response);
 
   ////////////////////////////////////////
 });
@@ -605,8 +633,8 @@ T _button99 = T("99", onTap: (BuildContext context) async {
 });
 
 main() async {
-
-  return buildApp(home: FunctionNoteKit(
+  return buildApp(
+      home: FunctionNoteKit(
     title: _noteName,
     button00: _button00,
     button01: _button01,
