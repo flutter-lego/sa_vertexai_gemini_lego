@@ -8,7 +8,7 @@ import '../../_/shared_params/firebase_vertexai_lego/_.dart';
 
 String _noteName = "Note";
 
-/// Generate text from text-only input
+/// Generate text from text-only input Stream
 T _button00 = T("00", onTap: (BuildContext context) async {
   ////////////////////////////////////////
 
@@ -81,7 +81,7 @@ T _button03 = T("03", onTap: (BuildContext context) async {
   ////////////////////////////////////////
 });
 
-/// Generate text from text and multiple images
+/// Generate text from text and multiple images Stream
 T _button04 = T("04", onTap: (BuildContext context) async {
   ////////////////////////////////////////
 

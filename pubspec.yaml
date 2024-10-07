@@ -21,6 +21,7 @@ dependencies:
   bot_toast: #@add
   keyboard_attachable:
   firebase_core:
+  firebase_vertexai:
 
 dev_dependencies:
   flutter_test:
