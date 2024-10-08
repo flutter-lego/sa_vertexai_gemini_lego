@@ -2,7 +2,7 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'package:firebase_vertexai/firebase_vertexai.dart';
 
-import '../../../util/_/shared_params/firebase_vertexai_lego/_.dart';
+import '../../../../util/_/shared_params/firebase_vertexai_lego/_.dart';
 
 Future<String> VerTexAIGeminiInText1VideoOutText(String prompt, File videoFile, String? videoType) async {
   // 텍스트 프롬프트 준비

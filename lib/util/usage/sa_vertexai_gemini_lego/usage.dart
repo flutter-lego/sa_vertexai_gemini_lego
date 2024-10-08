@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../../../../main.dart';
-import '../../../app/backend/vertex_ai_gemini/in_text_1image_out_text.dart';
-import '../../../app/backend/vertex_ai_gemini/in_text_1video_out_text.dart';
-import '../../../app/backend/vertex_ai_gemini/in_text_many_image_out_text.dart';
-import '../../../app/backend/vertex_ai_gemini/in_text_out_text.dart';
+import '../../../app/backend/vertex_ai_gemini/_new/in_text_1image_out_text.dart';
+import '../../../app/backend/vertex_ai_gemini/_new/in_text_many_image_out_text.dart';
+import '../../../app/backend/vertex_ai_gemini/_new/in_text_out_text.dart';
 
 String _noteName = "Note";
 

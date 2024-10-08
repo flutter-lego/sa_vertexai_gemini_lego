@@ -1,6 +1,6 @@
 import 'package:firebase_vertexai/firebase_vertexai.dart';
-import '../../../main.dart';
-import '../../../util/_/shared_params/firebase_vertexai_lego/_.dart';
+import '../../../../main.dart';
+import '../../../../util/_/shared_params/firebase_vertexai_lego/_.dart';
 
 Future<String> VerTexAIGeminiInText1ImageOutText(
     String prompt, Uint8List imageBytes, String? imageType) async {
